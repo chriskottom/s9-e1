@@ -20,6 +20,7 @@ text-to-speech requests.
 
 ### Sample Code
 It's easy enough to pass a String to FreeTTS:
+
 ```ruby
 require "lib/freetts"
 
@@ -27,6 +28,7 @@ FreeTTS.speak "hello world"
 ```
 
 With a little bit of manipulation, FreeTTS can read the news to you:
+
 ```ruby
 require "uri"
 require "rss"
