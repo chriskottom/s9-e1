@@ -45,4 +45,5 @@ end
 
 ## Future Enhancements
 - An adapter for plugging IO objects directly into the speech synthesizer
-
+- Experiment with further FreeTTS functions (voice manipulations, etc.) and possibly include
+- Create a simple interactive command-line client
