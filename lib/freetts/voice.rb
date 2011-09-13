@@ -2,6 +2,9 @@ module FreeTTS
   class Voice
     DefaultName = "kevin16"
 
+    @voice_manager = com.sun.speech.freetts.VoiceManager.getInstance
+    class << self; attr_reader :voice_manager; end
+
     require "forwardable"
     extend ::Forwardable
 
@@ -28,10 +31,6 @@ module FreeTTS
 
       voice.allocate
       Voice.new(voice)
-    end
-
-    def self.voice_manager
-      @@voice_manager ||= com.sun.speech.freetts.VoiceManager.getInstance
     end
   end
 end
