@@ -32,7 +32,7 @@ module FreeTTS
     end
 
     def self.all
-      voice_manager.get_voices.map {|voice| voice.getName }
+      voice_manager.get_voices.map { |voice| voice.get_name }
     end
 
     def self.for_name(voice_name)

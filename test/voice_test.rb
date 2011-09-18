@@ -21,20 +21,29 @@ class VoiceTest < Test::Unit::TestCase
 
   # Calling unknown accessor methods should raise a NoMethodException.
   def test_invalid_accessor_methods
-    invalid_accessors = %w( something voice coffee parakeet wombat)
+    invalid_accessors = %w( something voice wallaby wombat parakeet )
     invalid_accessors.each do |method|
-      assert_raises(NoMethodError) { valid_voice.send(method.to_sym) }
+      assert_raises(NoMethodError) do
+        valid_voice.send(method.to_sym)
+      end
     end
   end
 
-  # A request for all voices should get the names of all available.
-  # Furthermore, requesting an available voice by name should produce
-  # the relevant Voice object.
-  def test_fetch_all_voices
+  # A request for all voices should get an array of names.
+  def test_fetch_voices
     voice_names = FreeTTS::Voice.all
     assert_instance_of(Array, voice_names)
+
     voice_names.each do |voice_name|
       assert_instance_of(String, voice_name)
+    end
+  end
+
+  # Requesting an available voice by name should return the relevant voice.
+  def test_fetch_any_single_valid_voice
+    voice_names = FreeTTS::Voice.all
+
+    voice_names.each do |voice_name|
       assert_nothing_raised do
         voice = FreeTTS::Voice.for_name(voice_name)
         assert_instance_of(FreeTTS::Voice, voice)

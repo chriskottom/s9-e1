@@ -4,6 +4,8 @@ require "java"
 require "vendor/freetts.jar"
 
 require "freetts/voice"
+require "freetts/version"
+
 
 module FreeTTS
   @voice = Voice.for_name(Voice::DEFAULT_NAME)

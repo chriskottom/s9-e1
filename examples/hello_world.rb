@@ -2,4 +2,4 @@
 
 require "lib/freetts"
 
-FreeTTS.speak "hello world"
+FreeTTS.speak("hello world")
