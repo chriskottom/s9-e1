@@ -1,7 +1,7 @@
 require "freetts/voice"
 
 module FreeTTS
-  @voice = Voice.for_name(Voice::DefaultName)
+  @voice = Voice.for_name(Voice::DEFAULT_NAME)
   class << self; attr_accessor :voice; end
 
 
