@@ -64,4 +64,4 @@ examples/voice_play.rb
 
 ## Future Enhancements
 - An adapter for plugging IO objects directly into the speech synthesizer
-
+- Whack out a gem version of the library
