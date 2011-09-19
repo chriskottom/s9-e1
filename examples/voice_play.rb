@@ -1,7 +1,6 @@
 #!/usr/bin/env jruby
 
-$:.unshift File.join(File.dirname(__FILE__), "..")
-require "lib/freetts"
+require "freetts"
 
 
 # A summary of the available commands

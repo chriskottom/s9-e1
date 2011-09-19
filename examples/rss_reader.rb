@@ -2,9 +2,10 @@
 
 require "uri"
 require "rss"
-require "lib/freetts"
+require "freetts"
 
-feed_url = "http://feeds.feedburner.com/RubyInside"
+
+feed_url = "http://feeds.feedburner.com/RailsInside"
 
 uri = URI.parse(feed_url)
 
