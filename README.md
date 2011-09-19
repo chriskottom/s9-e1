@@ -19,11 +19,19 @@ This wrapper exposes the most essential functionality required for processing
 text-to-speech requests.
 
 
+### Installation
+Installing the library is as simple as:
+
+```bash
+gem install freetts
+```
+
+
 ### Sample Code
 It's easy enough to pass a String to FreeTTS:
 
 ```ruby
-require "lib/freetts"
+require "freetts"
 
 FreeTTS.speak "hello world"
 ```
@@ -33,7 +41,7 @@ With a little bit of manipulation, FreeTTS can read the news to you:
 ```ruby
 require "uri"
 require "rss"
-require "lib/freetts"
+require "freetts"
 
 uri = URI.parse("http://feeds.feedburner.com/RubyInside")
 feed_items = RSS::Parser.parse(uri.read, false).items.first(5)
@@ -64,4 +72,4 @@ examples/voice_play.rb
 
 ## Future Enhancements
 - An adapter for plugging IO objects directly into the speech synthesizer
-- Whack out a gem version of the library
+
