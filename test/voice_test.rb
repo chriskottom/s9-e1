@@ -6,7 +6,7 @@ require "test/unit"
 
 class VoiceTest < Test::Unit::TestCase
   def valid_voice
-    FreeTTS.voice
+    FreeTTS.current_voice
   end
 
   # Calling valid accessor methods should result in a successful invocation.

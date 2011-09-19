@@ -8,11 +8,11 @@ require "freetts/version"
 
 
 module FreeTTS
-  @voice = Voice.for_name(Voice::DEFAULT_NAME)
-  class << self; attr_accessor :voice; end
+  @current_voice = Voice.for_name(Voice::DEFAULT_NAME)
+  class << self; attr_accessor :current_voice; end
 
 
   def self.speak(speakable)
-    self.voice.speak(speakable)
+    self.current_voice.speak(speakable)
   end
 end
