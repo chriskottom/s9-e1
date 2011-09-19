@@ -42,8 +42,16 @@ feed_items.each do |item|
 end
 ```
 
+Feel free to run any of the sample programs in the `examples/` directory
+to see the library in action.
+
+```bash
+examples/hello_world.rb
+examples/rss_reader.rb
+examples/voice_play.rb
+```
+
 
 ## Future Enhancements
 - An adapter for plugging IO objects directly into the speech synthesizer
-- Experiment with further FreeTTS functions (voice manipulations, etc.) and possibly include
-- Create a simple interactive command-line client
+
