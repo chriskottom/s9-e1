@@ -18,6 +18,7 @@ from Carnegie Mellon University.
 This wrapper exposes the most essential functionality required for processing
 text-to-speech requests.
 
+
 ### Sample Code
 It's easy enough to pass a String to FreeTTS:
 
@@ -40,6 +41,15 @@ feed_items.each do |item|
   puts item.title.content
   FreeTTS.speak item.title.content
 end
+```
+
+You can change the currently selected voice and make modifications that
+will affect pitch, rate of speech, and so on.
+
+```ruby
+voice = FreeTTS::Voice.for_name("alan")
+voice.pitch *= 1.25
+voice.rate += 20
 ```
 
 Feel free to run any of the sample programs in the `examples/` directory
