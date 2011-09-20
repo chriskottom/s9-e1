@@ -12,10 +12,6 @@ module FreeTTS
 
     @voice_manager = com.sun.speech.freetts.VoiceManager.get_instance
     class << self; attr_reader :voice_manager; end
-    #class << self
-    #  attr_accessor :voice_manager
-    #  @voice_manager = com.sun.speech.freetts.VoiceManager.get_instance
-    #end
 
     ACCESSIBLE_ATTRIBUTES.each do |attribute|
       ruby_method = attribute.to_sym
