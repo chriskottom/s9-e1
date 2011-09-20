@@ -59,11 +59,12 @@ module FreeTTS
     end
 
     def self.for_name(voice_name)
-      if voice = voice_manager.get_voice(voice_name)
+      voice = voice_manager.get_voice(voice_name)
+      if voice
         voice.allocate
         Voice.new(voice)
       else
-        raise "no voice found for name \"#{ voice_name }\""
+        raise "No voice found for name \"#{ voice_name }\""
       end
     end
   end
