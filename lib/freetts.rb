@@ -1,5 +1,5 @@
 require "java"
-require "vendor/freetts.jar"
+require "freetts.jar"
 
 require "freetts/version"
 require "freetts/voice"

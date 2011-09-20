@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = ["freetts"]
-  s.require_paths = ["lib"]
+  s.require_paths = ["lib", "vendor"]
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
