@@ -2,9 +2,32 @@ module FreeTTS
   class Voice
     DEFAULT_NAME = "kevin16"
 
+    ACCESSIBLE_ATTRIBUTES = %w( age description domain duration_stretch
+                                gender locale name organization pitch 
+                                pitch_range pitch_shift rate run_title style
+                                volume )
+    MODIFIABLE_ATTRIBUTES = %w( duration_stretch pitch pitch_range pitch_shift
+                                rate volume )
+
+
     @voice_manager = com.sun.speech.freetts.VoiceManager.get_instance
     class << self; attr_reader :voice_manager; end
+    #class << self
+    #  attr_accessor :voice_manager
+    #  @voice_manager = com.sun.speech.freetts.VoiceManager.get_instance
+    #end
 
+    ACCESSIBLE_ATTRIBUTES.each do |attribute|
+      ruby_method = attribute.to_sym
+      java_method = "get_#{ attribute }".to_sym
+      define_method(ruby_method) { @voice_impl.send(java_method) }
+    end
+
+    MODIFIABLE_ATTRIBUTES.each do |attribute|
+      ruby_method = "#{ attribute }=".to_sym
+      java_method = "set_#{ attribute }".to_sym
+      define_method(ruby_method) { |value| @voice_impl.send(java_method, value) }
+    end
 
     def initialize(voice)
       @voice_impl = voice
