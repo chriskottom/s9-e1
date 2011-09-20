@@ -1,16 +1,12 @@
 #!/usr/bin/env jruby
 
-require "freetts"
-
-
-USAGE_MESSAGE = "please enter a message for free t t s to speak"
 USAGE_EXAMPLE = "Usage: freetts <MESSAGE>"
 
 if ARGV.length > 0
+  require "freetts"
   message = ARGV.join(" ")
   FreeTTS.speak(message)
 else
-  FreeTTS.speak(USAGE_MESSAGE)
   puts USAGE_EXAMPLE
   exit(false)
 end
