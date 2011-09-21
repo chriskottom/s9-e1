@@ -30,14 +30,14 @@ module FreeTTS
     @voice_manager = com.sun.speech.freetts.VoiceManager.get_instance
 
     ACCESSIBLE_ATTRIBUTES.each do |attribute|
-      ruby_method = attribute.to_sym
-      java_method = "get_#{ attribute }".to_sym
+      ruby_method = attribute
+      java_method = "get_#{ attribute }"
       define_method(ruby_method) { @voice_impl.send(java_method) }
     end
 
     MODIFIABLE_ATTRIBUTES.each do |attribute|
-      ruby_method = "#{ attribute }=".to_sym
-      java_method = "set_#{ attribute }".to_sym
+      ruby_method = "#{ attribute }="
+      java_method = "set_#{ attribute }"
       define_method(ruby_method) { |value| @voice_impl.send(java_method, value) }
     end
 
