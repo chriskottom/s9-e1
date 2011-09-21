@@ -1,6 +1,6 @@
 #!/usr/bin/env jruby
 
-require "freetts"
+require_relative "../lib/freetts"
 
 
 # A summary of the available commands

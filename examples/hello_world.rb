@@ -1,5 +1,5 @@
 #!/usr/bin/env jruby
 
-require "freetts"
+require_relative "../lib/freetts"
 
 FreeTTS.speak("hello world")

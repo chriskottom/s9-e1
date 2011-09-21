@@ -1,6 +1,4 @@
-$:.unshift File.join(File.dirname(__FILE__), "../lib")
-
-require "freetts"
+require_relative "../lib/freetts"
 require "test/unit"
 
 

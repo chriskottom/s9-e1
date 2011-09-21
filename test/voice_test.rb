@@ -1,6 +1,4 @@
-$:.unshift File.join(File.dirname(__FILE__), "../lib")
-
-require "freetts"
+require_relative "../lib/freetts.rb"
 require "test/unit"
 
 
@@ -14,7 +12,7 @@ class VoiceTest < Test::Unit::TestCase
     valid_accessors = %w( description gender locale pitch rate style )
     valid_accessors.each do |method|
       assert_nothing_raised do
-        valid_voice.send(method.to_sym)
+        valid_voice.send(method)
       end
     end
   end
@@ -24,7 +22,7 @@ class VoiceTest < Test::Unit::TestCase
     invalid_accessors = %w( something voice wallaby wombat parakeet )
     invalid_accessors.each do |method|
       assert_raises(NoMethodError) do
-        valid_voice.send(method.to_sym)
+        valid_voice.send(method)
       end
     end
   end

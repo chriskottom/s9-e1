@@ -3,7 +3,7 @@
 USAGE_EXAMPLE = "Usage: freetts <MESSAGE>"
 
 if ARGV.length > 0
-  require "freetts"
+  require_relative "../lib/freetts"
   message = ARGV.join(" ")
   FreeTTS.speak(message)
 else

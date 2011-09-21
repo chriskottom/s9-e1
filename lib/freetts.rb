@@ -1,8 +1,8 @@
 require "java"
-require "freetts.jar"
+require_relative "../vendor/freetts.jar"
 
-require "freetts/version"
-require "freetts/voice"
-require "freetts/freetts"
+require_relative "freetts/version"
+require_relative "freetts/voice"
+require_relative "freetts/freetts"
 
 

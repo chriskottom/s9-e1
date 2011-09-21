@@ -2,14 +2,19 @@
 
 require "uri"
 require "rss"
-require "freetts"
+require_relative "../lib/freetts"
 
 
 feed_url = "http://feeds.feedburner.com/RubyInside"
 
 uri = URI.parse(feed_url)
+content = uri.read
+puts content
+puts content.encoding
+content.force_encoding("utf-8")
+puts content.encoding
 
-feed_items = RSS::Parser.parse(uri.read, false).items.first(5)
+feed_items = RSS::Parser.parse(content, false).items.first(5)
 
 feed_items.each do |item|
   title = begin
